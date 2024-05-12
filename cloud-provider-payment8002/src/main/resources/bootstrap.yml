@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: cloud-payment-service
+
+  cloud:
+    consul:
+      host: localhost
+      discovery:
+        service-name: ${spring.application.name}
+      port: 8500
+      config:
+#        defult ‘，’ we update '-'
+        profile-separator: '-'
+        format: yaml
+#        更新时长
+        watch:
+          wait-time: 1
+
+
+#config/$name-dev or prod**/data
